@@ -1,5 +1,13 @@
 function init() {
-    buildCity(userId, "Hello World")
+    //buildCity(userId, "Hello World")
+    document.getElementById("buildCityForm").addEventListener("submit", buildCitySubmit)
+}
+
+function buildCitySubmit(event) {
+    event.preventDefault()
+    var cityNameText = document.getElementById("buildCityName")
+    var cityName = cityNameText.nodeValue
+    buildCity(userId, cityName)
 }
 
 window.onload = init;
